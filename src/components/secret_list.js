@@ -1,5 +1,4 @@
 import React from 'react';
-import auth from '../hoc/auth';
 
 const SecretList = props =>  {
         
@@ -17,4 +16,4 @@ const SecretList = props =>  {
     </div>
 );}
 
-export default auth(SecretList);
+export default SecretList;

@@ -5,7 +5,7 @@ import userReducer from './user_reducer';
 
 const rootReducer = combineReducers ({
     form: formReducer,
-    quote: quotesReducer,
+    quotes: quotesReducer,
     user: userReducer
 });
 

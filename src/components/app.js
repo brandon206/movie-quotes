@@ -11,17 +11,19 @@ import SecretList from './secret_list';
 import SignIn from './sign_in';
 import SignUp from './sign_up';
 
+import auth from '../hoc/auth';
+
 const App = () => (
     <div>
        <Nav/>
        <div className="container">
             <Route exact path = "/" component = {Home}/>
             <Route path = "/public-list" component = {PublicList}/>
-            <Route path = "/secret-list" component = {SecretList}/>
+            <Route path = "/secret-list" component = {auth(SecretList)}/>
             <Route path = "/about" component = {About}/>
-            <Route path = "/quotes" component = {Quotes}/>
-            <Route path = "/sign-in" component = {SignIn}/>
-            <Route path = "/sign-up" component = {SignUp}/>
+            <Route path = "/quotes" component = {auth(Quotes)}/>
+            <Route path = "/sign-in" component = {auth(SignIn, "/quotes", false)}/>
+            <Route path = "/sign-up" component = {auth(SignUp, "/quotes", false)}/>
        </div>
     </div>
 );
